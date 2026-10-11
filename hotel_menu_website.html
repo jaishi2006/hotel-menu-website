@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golden Leaf Hotel | Menu</title>
+  <style>
+    :root { --green:#183f35; --gold:#d9ad62; --cream:#fffaf1; --ink:#26312d; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Arial, Helvetica, sans-serif; color:var(--ink); background:var(--cream); }
+    header { background:linear-gradient(120deg,rgba(15,43,35,.95),rgba(24,63,53,.86)), radial-gradient(circle at top right,#9a7542,transparent 45%); color:white; padding:28px 7% 55px; }
+    nav { display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; }
+    .brand { font-weight:800; letter-spacing:1px; font-size:1.05rem; }
+    nav a { color:white; text-decoration:none; margin-left:18px; font-size:.95rem; }
+    .hero { max-width:760px; margin:55px auto 0; text-align:center; }
+    .eyebrow { color:var(--gold); text-transform:uppercase; letter-spacing:3px; font-size:.78rem; font-weight:bold; }
+    h1 { font-family:Georgia,serif; font-size:clamp(2.5rem,6vw,4.5rem); line-height:1.05; margin:14px 0; }
+    .hero p { color:#e7eee9; line-height:1.7; max-width:570px; margin:0 auto; }
+    .button { display:inline-block; margin-top:24px; background:var(--gold); color:#172f28; border:0; border-radius:25px; padding:12px 22px; font-weight:bold; text-decoration:none; cursor:pointer; }
+    main { max-width:1100px; margin:auto; padding:42px 6% 60px; }
+    .section-head { text-align:center; margin-bottom:24px; }
+    h2 { font-family:Georgia,serif; color:var(--green); font-size:2.1rem; margin:8px 0; }
+    .section-head p { color:#65716b; margin:0; }
+    .filters { display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin:26px 0; }
+    .filter { border:1px solid #cbd5ce; background:white; color:var(--green); border-radius:20px; padding:9px 16px; cursor:pointer; }
+    .filter.active, .filter:hover { background:var(--green); color:white; border-color:var(--green); }
+    .menu-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+    .item { background:white; border:1px solid #ece8de; border-radius:16px; padding:20px; box-shadow:0 8px 22px rgba(28,54,43,.05); display:flex; flex-direction:column; }
+    .food-icon { width:54px; height:54px; display:grid; place-items:center; border-radius:14px; background:#f6eddd; font-size:1.8rem; }
+    .item-top { display:flex; justify-content:space-between; align-items:flex-start; gap:10px; margin-top:14px; }
+    .item h3 { margin:0; color:#243e33; font-size:1.08rem; }
+    .price { color:#a4772f; font-weight:800; white-space:nowrap; }
+    .item p { color:#69746e; line-height:1.5; font-size:.9rem; margin:10px 0 16px; flex:1; }
+    .tag { font-size:.72rem; color:#49715e; background:#edf5ef; padding:5px 9px; border-radius:20px; align-self:flex-start; }
+    .about { margin-top:42px; background:#eaf0e9; border-radius:18px; padding:28px; display:flex; gap:20px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+    .about h2 { font-size:1.7rem; }
+    .about p { line-height:1.6; max-width:650px; margin-bottom:0; }
+    footer { text-align:center; background:#16392f; color:#e6eee8; padding:22px 15px; font-size:.88rem; }
+    #notice { min-height:22px; text-align:center; color:var(--green); font-weight:bold; margin-top:18px; }
+    @media(max-width:800px) { .menu-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media(max-width:540px) { .menu-grid { grid-template-columns:1fr; } nav a { margin-left:10px; } .hero { margin-top:40px; } }
+  </style>
+</head>
+<body>
+  <header id="home">
+    <nav>
+      <div class="brand">🍃 GOLDEN LEAF HOTEL</div>
+      <div><a href="#home">Home</a><a href="#menu">Menu</a><a href="#about">About</a></div>
+    </nav>
+    <div class="hero">
+      <div class="eyebrow">Fresh • Local • Delicious</div>
+      <h1>A Taste Worth<br>Coming Back For</h1>
+      <p>Welcome to Golden Leaf Hotel. Explore our simple menu of guest favorites, prepared with care and served with a smile.</p>
+      <a class="button" href="#menu">Explore Our Menu ↓</a>
+    </div>
+  </header>
+  <main>
+    <section id="menu">
+      <div class="section-head">
+        <div class="eyebrow">Made with care</div>
+        <h2>Our Popular Menu</h2>
+        <p>Good food, fair prices, and something for everyone.</p>
+      </div>
+      <div class="filters" aria-label="Filter menu items">
+        <button class="filter active" data-filter="All">All Items</button>
+        <button class="filter" data-filter="Main Course">Main Course</button>
+        <button class="filter" data-filter="Snacks">Snacks</button>
+        <button class="filter" data-filter="Drinks">Drinks</button>
+      </div>
+      <div class="menu-grid" id="menuGrid">
+        <article class="item" data-category="Main Course"><div class="food-icon">🍛</div><div class="item-top"><h3>Chicken Biryani</h3><span class="price">₩12,000</span></div><p>Fragrant rice with tender chicken and warm spices.</p><span class="tag">Best seller</span></article>
+        <article class="item" data-category="Main Course"><div class="food-icon">🍜</div><div class="item-top"><h3>Vegetable Noodles</h3><span class="price">₩8,000</span></div><p>Stir-fried noodles with fresh vegetables and house sauce.</p><span class="tag">Vegetarian</span></article>
+        <article class="item" data-category="Main Course"><div class="food-icon">🍚</div><div class="item-top"><h3>Rice & Curry</h3><span class="price">₩9,000</span></div><p>A comforting plate of steamed rice with daily curry.</p><span class="tag">Guest favorite</span></article>
+        <article class="item" data-category="Snacks"><div class="food-icon">🥟</div><div class="item-top"><h3>Steamed Dumplings</h3><span class="price">₩7,000</span></div><p>Soft dumplings served with a flavorful dipping sauce.</p><span class="tag">Popular snack</span></article>
+        <article class="item" data-category="Snacks"><div class="food-icon">🍟</div><div class="item-top"><h3>Crispy French Fries</h3><span class="price">₩5,000</span></div><p>Golden, crispy fries with a light seasoning.</p><span class="tag">Quick bite</span></article>
+        <article class="item" data-category="Drinks"><div class="food-icon">☕</div><div class="item-top"><h3>Hot Coffee</h3><span class="price">₩3,000</span></div><p>Freshly brewed coffee, perfect for a relaxing break.</p><span class="tag">Hot drink</span></article>
+        <article class="item" data-category="Drinks"><div class="food-icon">🍋</div><div class="item-top"><h3>Lemon Iced Tea</h3><span class="price">₩3,500</span></div><p>A refreshing iced tea with a bright lemon flavor.</p><span class="tag">Cold drink</span></article>
+        <article class="item" data-category="Snacks"><div class="food-icon">🥗</div><div class="item-top"><h3>Fresh Garden Salad</h3><span class="price">₩6,000</span></div><p>Crisp seasonal vegetables with a light house dressing.</p><span class="tag">Fresh choice</span></article>
+        <article class="item" data-category="Main Course"><div class="food-icon">🍗</div><div class="item-top"><h3>Grilled Chicken Plate</h3><span class="price">₩11,000</span></div><p>Grilled chicken served with vegetables and a side dish.</p><span class="tag">Chef's choice</span></article>
+      </div>
+      <div id="notice" aria-live="polite"></div>
+    </section>
+    <section class="about" id="about">
+      <div><div class="eyebrow">Your comfort, our promise</div><h2>More than a meal</h2><p>At Golden Leaf Hotel, we believe good food brings people together. Our goal is friendly service, a comfortable atmosphere, and a menu guests can enjoy.</p></div>
+      <a class="button" href="mailto:hello@goldenleaf.example?subject=Golden%20Leaf%20Hotel%20Enquiry">Contact Us</a>
+    </section>
+  </main>
+  <footer>© 2026 Golden Leaf Hotel · Sample website for a class presentation</footer>
+  <script>
+    const buttons = document.querySelectorAll('.filter');
+    const items = document.querySelectorAll('.item');
+    const notice = document.getElementById('notice');
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        button.classList.add('active');
+        let shown = 0;
+        items.forEach(item => {
+          const visible = button.dataset.filter === 'All' || item.dataset.category === button.dataset.filter;
+          item.style.display = visible ? 'flex' : 'none';
+          if (visible) shown++;
+        });
+        notice.textContent = `Showing ${shown} ${button.dataset.filter === 'All' ? 'menu items' : button.dataset.filter.toLowerCase() + ' items'}.`;
+      });
+    });
+  </script>
+</body>
+</html>
